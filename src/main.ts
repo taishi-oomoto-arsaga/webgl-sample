@@ -57,12 +57,9 @@ class WebGL {
     this.directionalLight
     this.ambientLight
     this.box
-    this.raycaster
-    this.isClicked = true
 
     this.controls
     this.axesHelper
-    this.timeFrame
 
     this.render = this.render.bind(this)
   }
@@ -126,14 +123,11 @@ class WebGL {
     // ヘルパー
     this.axesHelper = new THREE.AxesHelper(5)
     this.scene.add(this.axesHelper)
-
-    // レイキャスター
-    this.raycaster = new THREE.Raycaster()
-
   }
 
   render() {
     requestAnimationFrame(this.render)
+    // コメントを外すと回転する
     // this.box.rotation.x += 0.01
     // this.box.rotation.y += 0.01
     this.renderer.render(this.scene, this.camera);
